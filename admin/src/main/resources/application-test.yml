@@ -1,11 +1,11 @@
 spring:
   datasource:
-    url: jdbc:mysql://ballcat-mysql:3306/ballcat?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
-    username: root
-    password: '123456'
+    url: jdbc:mysql://common-mysql:3306/ballcat?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: ballcat
+    password: 'ballcat@2021'
   redis:
-    host: ballcat-redis
-    password: ''
+    host: common-redis
+    password: 'rebate@2021'
     port: 6379
 
 # 日志文件地址，配置此属性以便 SBA 在线查看日志

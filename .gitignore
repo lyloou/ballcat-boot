@@ -37,3 +37,4 @@ build/
 .flattened-pom.xml
 /**/application-local.yml
 /logs/
+target-jar
