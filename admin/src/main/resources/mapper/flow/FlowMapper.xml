@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.your.packages.flow.mapper.FlowMapper">
+
+	<resultMap id="flowMap" type="com.your.packages.flow.model.entity.Flow">
+  		<id property="id" column="id"/>
+    		<result property="userId" column="user_id"/>
+    		<result property="day" column="day"/>
+    		<result property="item" column="item"/>
+    		<result property="weather" column="weather"/>
+    		<result property="memo" column="memo"/>
+    		<result property="gmtCreate" column="gmt_create"/>
+    		<result property="gmtModified" column="gmt_modified"/>
+    		<result property="isArchived" column="is_archived"/>
+    		<result property="isDisabled" column="is_disabled"/>
+    		<result property="syncEsStatus" column="sync_es_status"/>
+      </resultMap>
+
+	<sql id="Base_Column_List">
+		id,        
+		user_id,        
+		day,        
+		item,        
+		weather,        
+		memo,        
+		gmt_create,        
+		gmt_modified,        
+		is_archived,        
+		is_disabled,        
+		sync_es_status        
+	</sql>
+
+	<sql id="Base_Alias_Column_List">
+		f.id,        
+		f.user_id,        
+		f.day,        
+		f.item,        
+		f.weather,        
+		f.memo,        
+		f.gmt_create,        
+		f.gmt_modified,        
+		f.is_archived,        
+		f.is_disabled,        
+		f.sync_es_status        
+	</sql>
+</mapper>

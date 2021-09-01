@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.your.packages.flow.mapper.UserMapper">
+
+	<resultMap id="userMap" type="com.your.packages.flow.model.entity.User">
+  		<id property="id" column="id"/>
+    		<result property="name" column="name"/>
+    		<result property="nickname" column="nickname"/>
+    		<result property="email" column="email"/>
+    		<result property="phone" column="phone"/>
+    		<result property="avatar" column="avatar"/>
+    		<result property="personalSignature" column="personal_signature"/>
+    		<result property="gmtCreate" column="gmt_create"/>
+    		<result property="gmtModified" column="gmt_modified"/>
+    		<result property="isDisabled" column="is_disabled"/>
+      </resultMap>
+
+	<sql id="Base_Column_List">
+		id,        
+		name,        
+		nickname,        
+		email,        
+		phone,        
+		avatar,        
+		personal_signature,        
+		gmt_create,        
+		gmt_modified,        
+		is_disabled        
+	</sql>
+
+	<sql id="Base_Alias_Column_List">
+		u.id,        
+		u.name,        
+		u.nickname,        
+		u.email,        
+		u.phone,        
+		u.avatar,        
+		u.personal_signature,        
+		u.gmt_create,        
+		u.gmt_modified,        
+		u.is_disabled        
+	</sql>
+</mapper>

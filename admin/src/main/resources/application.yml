@@ -80,7 +80,7 @@ ballcat:
         - scope: server
           description: server all
       token-url: http://ballcat-admin:8080/oauth/token
-
+    base-package: com.your.packages
 
 
 

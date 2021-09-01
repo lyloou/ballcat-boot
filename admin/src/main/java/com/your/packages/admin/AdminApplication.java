@@ -14,7 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @EnableAccessLog
 @EnableOperationLog
 @MapperScan({ "com.your.packages.**.mapper" })
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.your.packages")
 public class AdminApplication {
 
 	public static void main(String[] args) {
