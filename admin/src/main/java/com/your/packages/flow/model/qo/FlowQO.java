@@ -11,13 +11,14 @@ import lombok.Data;
  */
 @Data
 @ApiModel(value = "夫路查询对象")
-public class FlowQO  {
+public class FlowQO {
+
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * ID
 	 */
-	@ApiModelProperty(value="ID")
+	@ApiModelProperty(value = "ID")
 	private Long id;
 
 }

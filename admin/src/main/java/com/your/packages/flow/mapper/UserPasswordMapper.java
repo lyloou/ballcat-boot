@@ -18,17 +18,18 @@ import com.hccake.extend.mybatis.plus.toolkit.WrappersX;
  */
 public interface UserPasswordMapper extends ExtendMapper<UserPassword> {
 
-    /**
-    * 分页查询
-    * @param pageParam 分页参数
-    * @param qo 查询参数
-    * @return PageResult<UserPasswordPageVO> VO分页数据
-    */
-   default PageResult<UserPasswordPageVO> queryPage(PageParam pageParam, UserPasswordQO qo){
+	/**
+	 * 分页查询
+	 * @param pageParam 分页参数
+	 * @param qo 查询参数
+	 * @return PageResult<UserPasswordPageVO> VO分页数据
+	 */
+	default PageResult<UserPasswordPageVO> queryPage(PageParam pageParam, UserPasswordQO qo) {
 		IPage<UserPassword> page = this.prodPage(pageParam);
 		LambdaQueryWrapperX<UserPassword> wrapper = WrappersX.lambdaQueryX(UserPassword.class);
 		this.selectPage(page, wrapper);
 		IPage<UserPasswordPageVO> voPage = page.convert(UserPasswordConverter.INSTANCE::poToPageVo);
 		return new PageResult<>(voPage.getRecords(), voPage.getTotal());
-   }
+	}
+
 }

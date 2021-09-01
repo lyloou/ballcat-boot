@@ -18,15 +18,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl extends ExtendServiceImpl<UserMapper, User> implements UserService {
 
-    /**
-    *  根据QueryObeject查询分页数据
-    * @param pageParam 分页参数
-    * @param qo 查询参数对象
-    * @return PageResult<UserPageVO> 分页数据
-    */
-    @Override
-    public PageResult<UserPageVO> queryPage(PageParam pageParam, UserQO qo) {
-        return baseMapper.queryPage(pageParam, qo);
-    }
+	/**
+	 * 根据QueryObeject查询分页数据
+	 * @param pageParam 分页参数
+	 * @param qo 查询参数对象
+	 * @return PageResult<UserPageVO> 分页数据
+	 */
+	@Override
+	public PageResult<UserPageVO> queryPage(PageParam pageParam, UserQO qo) {
+		return baseMapper.queryPage(pageParam, qo);
+	}
 
 }

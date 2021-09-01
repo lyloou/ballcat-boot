@@ -18,18 +18,18 @@ import com.hccake.extend.mybatis.plus.toolkit.WrappersX;
  */
 public interface FlowMapper extends ExtendMapper<Flow> {
 
-    /**
-    * 分页查询
-    * @param pageParam 分页参数
-    * @param qo 查询参数
-    * @return PageResult<FlowPageVO> VO分页数据
-    */
-   default PageResult<FlowPageVO> queryPage(PageParam pageParam, FlowQO qo){
+	/**
+	 * 分页查询
+	 * @param pageParam 分页参数
+	 * @param qo 查询参数
+	 * @return PageResult<FlowPageVO> VO分页数据
+	 */
+	default PageResult<FlowPageVO> queryPage(PageParam pageParam, FlowQO qo) {
 		IPage<Flow> page = this.prodPage(pageParam);
-		LambdaQueryWrapperX<Flow> wrapper = WrappersX.lambdaQueryX(Flow.class)
-				.eqIfPresent(Flow::getId, qo.getId());
+		LambdaQueryWrapperX<Flow> wrapper = WrappersX.lambdaQueryX(Flow.class).eqIfPresent(Flow::getId, qo.getId());
 		this.selectPage(page, wrapper);
 		IPage<FlowPageVO> voPage = page.convert(FlowConverter.INSTANCE::poToPageVo);
 		return new PageResult<>(voPage.getRecords(), voPage.getTotal());
-   }
+	}
+
 }

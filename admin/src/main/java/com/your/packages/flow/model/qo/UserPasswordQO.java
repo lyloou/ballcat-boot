@@ -11,13 +11,14 @@ import lombok.Data;
  */
 @Data
 @ApiModel(value = "用户密码查询对象")
-public class UserPasswordQO  {
+public class UserPasswordQO {
+
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * 用户密码ID
 	 */
-	@ApiModelProperty(value="用户密码ID")
+	@ApiModelProperty(value = "用户密码ID")
 	private Long id;
 
 }

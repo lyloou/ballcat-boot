@@ -18,15 +18,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class FlowServiceImpl extends ExtendServiceImpl<FlowMapper, Flow> implements FlowService {
 
-    /**
-    *  根据QueryObeject查询分页数据
-    * @param pageParam 分页参数
-    * @param qo 查询参数对象
-    * @return PageResult<FlowPageVO> 分页数据
-    */
-    @Override
-    public PageResult<FlowPageVO> queryPage(PageParam pageParam, FlowQO qo) {
-        return baseMapper.queryPage(pageParam, qo);
-    }
+	/**
+	 * 根据QueryObeject查询分页数据
+	 * @param pageParam 分页参数
+	 * @param qo 查询参数对象
+	 * @return PageResult<FlowPageVO> 分页数据
+	 */
+	@Override
+	public PageResult<FlowPageVO> queryPage(PageParam pageParam, FlowQO qo) {
+		return baseMapper.queryPage(pageParam, qo);
+	}
 
 }

@@ -17,7 +17,6 @@ import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-
 /**
  * 用户密码
  *
@@ -25,67 +24,66 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/flow/user-password" )
+@RequestMapping("/flow/user-password")
 @Api(value = "user-password", tags = "用户密码管理")
 public class UserPasswordController {
 
-    private final  UserPasswordService userPasswordService;
+	private final UserPasswordService userPasswordService;
 
-    /**
-     * 分页查询
-     * @param pageParam 分页参数
-     * @param userPasswordQO 用户密码查询对象
-     * @return R 通用返回体
-     */
-    @ApiOperation(value = "分页查询", notes = "分页查询")
-    @GetMapping("/page" )
-    @PreAuthorize("@per.hasPermission('flow:user-password:read')" )
-    public R<PageResult<UserPasswordPageVO>> getUserPasswordPage(
-            PageParam pageParam, UserPasswordQO userPasswordQO) {
-        return R.ok(userPasswordService.queryPage(pageParam, userPasswordQO));
-    }
+	/**
+	 * 分页查询
+	 * @param pageParam 分页参数
+	 * @param userPasswordQO 用户密码查询对象
+	 * @return R 通用返回体
+	 */
+	@ApiOperation(value = "分页查询", notes = "分页查询")
+	@GetMapping("/page")
+	@PreAuthorize("@per.hasPermission('flow:user-password:read')")
+	public R<PageResult<UserPasswordPageVO>> getUserPasswordPage(PageParam pageParam, UserPasswordQO userPasswordQO) {
+		return R.ok(userPasswordService.queryPage(pageParam, userPasswordQO));
+	}
 
-    /**
-     * 新增用户密码
-     * @param userPassword 用户密码
-     * @return R 通用返回体
-     */
-    @ApiOperation(value = "新增用户密码", notes = "新增用户密码")
-    @CreateOperationLogging(msg = "新增用户密码" )
-    @PostMapping
-    @PreAuthorize("@per.hasPermission('flow:user-password:add')" )
-    public R save(@RequestBody UserPassword userPassword) {
-        return userPasswordService.save(userPassword) ?
-                R.ok() : R.failed(BaseResultCode.UPDATE_DATABASE_ERROR, "新增用户密码失败");
-    }
+	/**
+	 * 新增用户密码
+	 * @param userPassword 用户密码
+	 * @return R 通用返回体
+	 */
+	@ApiOperation(value = "新增用户密码", notes = "新增用户密码")
+	@CreateOperationLogging(msg = "新增用户密码")
+	@PostMapping
+	@PreAuthorize("@per.hasPermission('flow:user-password:add')")
+	public R save(@RequestBody UserPassword userPassword) {
+		return userPasswordService.save(userPassword) ? R.ok()
+				: R.failed(BaseResultCode.UPDATE_DATABASE_ERROR, "新增用户密码失败");
+	}
 
-    /**
-     * 修改用户密码
-     * @param userPassword 用户密码
-     * @return R 通用返回体
-     */
-    @ApiOperation(value = "修改用户密码", notes = "修改用户密码")
-    @UpdateOperationLogging(msg = "修改用户密码" )
-    @PutMapping
-    @PreAuthorize("@per.hasPermission('flow:user-password:edit')" )
-    public R updateById(@RequestBody UserPassword userPassword) {
-        return userPasswordService.updateById(userPassword) ?
-                R.ok() : R.failed(BaseResultCode.UPDATE_DATABASE_ERROR, "修改用户密码失败");
-    }
+	/**
+	 * 修改用户密码
+	 * @param userPassword 用户密码
+	 * @return R 通用返回体
+	 */
+	@ApiOperation(value = "修改用户密码", notes = "修改用户密码")
+	@UpdateOperationLogging(msg = "修改用户密码")
+	@PutMapping
+	@PreAuthorize("@per.hasPermission('flow:user-password:edit')")
+	public R updateById(@RequestBody UserPassword userPassword) {
+		return userPasswordService.updateById(userPassword) ? R.ok()
+				: R.failed(BaseResultCode.UPDATE_DATABASE_ERROR, "修改用户密码失败");
+	}
 
-    /**
-     * 通过id删除用户密码
-     * @param id id
-     * @return R 通用返回体
-     */
-    @ApiOperation(value = "通过id删除用户密码", notes = "通过id删除用户密码")
-    @DeleteOperationLogging(msg = "通过id删除用户密码" )
-    @DeleteMapping("/{id}" )
-    @PreAuthorize("@per.hasPermission('flow:user-password:del')" )
-    public R removeById(@PathVariable("id") Long id) {
+	/**
+	 * 通过id删除用户密码
+	 * @param id id
+	 * @return R 通用返回体
+	 */
+	@ApiOperation(value = "通过id删除用户密码", notes = "通过id删除用户密码")
+	@DeleteOperationLogging(msg = "通过id删除用户密码")
+	@DeleteMapping("/{id}")
+	@PreAuthorize("@per.hasPermission('flow:user-password:del')")
+	public R removeById(@PathVariable("id") Long id) {
 
-        return userPasswordService.removeById(id) ?
-                R.ok() : R.failed(BaseResultCode.UPDATE_DATABASE_ERROR, "通过id删除用户密码失败");
-    }
+		return userPasswordService.removeById(id) ? R.ok()
+				: R.failed(BaseResultCode.UPDATE_DATABASE_ERROR, "通过id删除用户密码失败");
+	}
 
 }

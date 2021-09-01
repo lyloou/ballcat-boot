@@ -16,17 +16,18 @@ import org.springframework.stereotype.Service;
  * @author lyloou 2021-09-01 11:05:57
  */
 @Service
-public class UserPasswordServiceImpl extends ExtendServiceImpl<UserPasswordMapper, UserPassword> implements UserPasswordService {
+public class UserPasswordServiceImpl extends ExtendServiceImpl<UserPasswordMapper, UserPassword>
+		implements UserPasswordService {
 
-    /**
-    *  根据QueryObeject查询分页数据
-    * @param pageParam 分页参数
-    * @param qo 查询参数对象
-    * @return PageResult<UserPasswordPageVO> 分页数据
-    */
-    @Override
-    public PageResult<UserPasswordPageVO> queryPage(PageParam pageParam, UserPasswordQO qo) {
-        return baseMapper.queryPage(pageParam, qo);
-    }
+	/**
+	 * 根据QueryObeject查询分页数据
+	 * @param pageParam 分页参数
+	 * @param qo 查询参数对象
+	 * @return PageResult<UserPasswordPageVO> 分页数据
+	 */
+	@Override
+	public PageResult<UserPasswordPageVO> queryPage(PageParam pageParam, UserPasswordQO qo) {
+		return baseMapper.queryPage(pageParam, qo);
+	}
 
 }

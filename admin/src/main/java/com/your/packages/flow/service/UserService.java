@@ -14,12 +14,12 @@ import com.hccake.extend.mybatis.plus.service.ExtendService;
  */
 public interface UserService extends ExtendService<User> {
 
-    /**
-    *  根据QueryObeject查询分页数据
-    * @param pageParam 分页参数
-    * @param qo 查询参数对象
-    * @return PageResult&lt;UserPageVO&gt; 分页数据
-    */
-    PageResult<UserPageVO> queryPage(PageParam pageParam, UserQO qo);
+	/**
+	 * 根据QueryObeject查询分页数据
+	 * @param pageParam 分页参数
+	 * @param qo 查询参数对象
+	 * @return PageResult&lt;UserPageVO&gt; 分页数据
+	 */
+	PageResult<UserPageVO> queryPage(PageParam pageParam, UserQO qo);
 
 }
