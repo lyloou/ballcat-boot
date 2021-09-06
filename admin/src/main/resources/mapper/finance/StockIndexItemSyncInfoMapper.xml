@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.your.packages.finance.mapper.StockIndexItemSyncInfoMapper">
+	<resultMap id="stockIndexItemSyncInfoMap" type="com.your.packages.finance.model.entity.StockIndexItemSyncInfo">
+		<id property="id" column="id"/>
+		<result property="code" column="code"/>
+		<result property="start" column="start"/>
+		<result property="remark" column="remark"/>
+		<result property="queryParam" column="query_param"/>
+		<result property="createTime" column="create_time"/>
+		<result property="updateTime" column="update_time"/>
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		id,
+		code,
+		start,
+		remark,
+		query_param,
+		create_time,
+		update_time
+	</sql>
+
+	<sql id="Base_Alias_Column_List">
+		siisi.id,
+		siisi.code,
+		siisi.start,
+		siisi.remark,
+		siisi.query_param,
+		siisi.create_time,
+		siisi.update_time
+	</sql>
+</mapper>

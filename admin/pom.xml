@@ -48,6 +48,12 @@
 			<groupId>com.hccake</groupId>
 			<artifactId>ballcat-admin-i18n</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>com.geccocrawler</groupId>
+			<artifactId>gecco</artifactId>
+			<version>1.3.21</version>
+		</dependency>
 	</dependencies>
 
 	<build>
